@@ -1,0 +1,57 @@
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background: rgb(200, 121, 255);
+  background: radial-gradient(
+    circle,
+    rgba(200, 121, 255, 1) 0%,
+    rgba(151, 164, 254, 1) 0%,
+    rgba(59, 244, 251, 1) 100%,
+    rgba(255, 215, 255, 1) 100%
+  );
+}
+
+.div-containers,
+.section {
+  color: white;
+  height: 100vh;
+}
+
+.section {
+  border-bottom: 3px solid white;
+  display: grid;
+  place-content: center;
+  font-size: 4rem;
+}
+
+.div-containers {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.section {
+  scroll-snap-align: end;
+}
+
+/* Hide scrollbar on WebKit-based browsers  Chrome, Safari) */
+.div-containers::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar on Firefox */
+.div-containers {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar on Internet Explorer and Microsoft Edge */
+.div-containers {
+  -ms-overflow-style: none;
+}
