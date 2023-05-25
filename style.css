@@ -2,10 +2,21 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    
 }
-  
+  html{
+    background: rgb(144, 5, 243);
+    background: radial-gradient(
+      circle,
+      rgba(200, 121, 255, 1) 0%,
+      rgba(151, 164, 254, 1) 0%,
+      rgba(59, 244, 251, 1) 100%,
+      rgba(255, 215, 255, 1) 19%
+    );  
+  }
   
 .sidenav {
+
     height: 100%;
     width: 0;
     position: fixed;
