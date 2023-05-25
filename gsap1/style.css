@@ -18,7 +18,7 @@ body {
   );
 }
 
-.div-containers,
+
 .section {
   color: white;
   height: 100vh;
@@ -31,30 +31,13 @@ body {
   font-size: 4rem;
 }
 
-.div-containers {
-  overflow: auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
+
 
 .section {
   scroll-snap-align: end;
 }
 
-/* Hide scrollbar on WebKit-based browsers  Chrome, Safari) */
-.div-containers::-webkit-scrollbar {
-  display: none;
-}
 
-/* Hide scrollbar on Firefox */
-.div-containers {
-  scrollbar-width: none;
-}
-
-/* Hide scrollbar on Internet Explorer and Microsoft Edge */
-.div-containers {
-  -ms-overflow-style: none;
-}
 
 /* section2 */
 .section-two {
