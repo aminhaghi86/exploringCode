@@ -47,6 +47,24 @@ backgroundFolder.add(background, "b", 0, 255);
 backgroundFolder.add(background, "a", 0, 1.0);
 backgroundFolder.close();
 
+//add animated text 
+const text = {
+  message: "Amin - Canvas",
+  x: canvas.width / 2,
+  y: canvas.height / 2,
+  size: 48,
+  color: "#ffffff"
+};
+
+const textFolder = gui.addFolder("text");
+textFolder.add(text, "message");
+textFolder.add(text, "x", 0, canvas.width);
+textFolder.add(text, "y", 0, canvas.height);
+textFolder.add(text, "size", 12, 72);
+textFolder.addColor(text, "color");
+textFolder.open();
+//
+
 let increment = wave.frequency;
 function animate() {
   requestAnimationFrame(animate);
@@ -70,6 +88,11 @@ function animate() {
   }%, ${strokeColor.l}%)`;
   increment += wave.frequency *wave.phase;
   wave.phase+=0.01
+  //config text
+  ctx.fillStyle = text.color;
+  ctx.font = `${text.size}px Arial`;
+  ctx.fillText(text.message, text.x, text.y);
+  //
   ctx.stroke();
 }
 
