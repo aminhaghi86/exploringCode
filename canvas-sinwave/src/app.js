@@ -12,6 +12,7 @@ const wave = {
   length: 0.01,
   amplitude: 100,
   frequency: 0.01,
+  phase:0
 };
 
 const strokeColor = {
@@ -32,18 +33,19 @@ waveFolder.add(wave, "y", 0, canvas.height);
 waveFolder.add(wave, "length", -0.01, 0.01);
 waveFolder.add(wave, "amplitude", -300, 300);
 waveFolder.add(wave, "frequency", -0.01, 1);
+waveFolder.add(wave, "phase", -0.01, 1);
 waveFolder.open();
 const strokeColorFolder = gui.addFolder("stroke color");
 strokeColorFolder.add(strokeColor, "h", 0, 255);
 strokeColorFolder.add(strokeColor, "s", 0, 100);
 strokeColorFolder.add(strokeColor, "l", 0, 100);
-strokeColorFolder.open();
+strokeColorFolder.close();
 const backgroundFolder = gui.addFolder("background color");
 backgroundFolder.add(background, "r", 0, 255);
 backgroundFolder.add(background, "g", 0, 255);
 backgroundFolder.add(background, "b", 0, 255);
 backgroundFolder.add(background, "a", 0, 1.0);
-backgroundFolder.open();
+backgroundFolder.close();
 
 let increment = wave.frequency;
 function animate() {
@@ -66,7 +68,8 @@ function animate() {
   ctx.strokeStyle = `hsl(${Math.abs(strokeColor.h * Math.sin(increment))}, ${
     strokeColor.s
   }%, ${strokeColor.l}%)`;
-  increment += wave.frequency;
+  increment += wave.frequency *wave.phase;
+  wave.phase+=0.01
   ctx.stroke();
 }
 
