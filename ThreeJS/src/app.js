@@ -20,6 +20,5 @@ scene.add(axesHelper);
 
 
 // move the camera position to see ..
-camera.position.z=5
-
+camera.position.set(0,2,5)
 renderer.render(scene, camera);
