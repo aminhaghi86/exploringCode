@@ -30,13 +30,17 @@ const boxMaterial = new THREE.MeshBasicMaterial({
 })
 const box = new THREE.Mesh(boxGeometry,boxMaterial);
 scene.add(box);
-box.rotation.x=5
-box.rotation.z=5
 
+//declare function value of rotation update get increased 60 times per second
+// every second we are going to ratate the cube by 0.01 radians and x and y axis
+function animate (){
+    box.rotation.x+=0.01;
+    box.rotation.y+=0.01;
+    renderer.render(scene, camera);
+}
 
-
-
+renderer.setAnimationLoop(animate)
 
 
 //
-renderer.render(scene, camera);
+
