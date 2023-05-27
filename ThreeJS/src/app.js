@@ -1,5 +1,5 @@
 import * as THREE from "three";
-
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 const renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -15,12 +15,18 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
+const orbit = new OrbitControls(camera,renderer.domElement)
+
 const axesHelper = new THREE.AxesHelper(3)
 scene.add(axesHelper);
 
 
 // move the camera position to see ..
-camera.position.set(0,2,5)
+camera.position.set(0,2,5);
+
+
+//call update method  every time we change position of camera!
+orbit.update()
 
 //add box in project
 
