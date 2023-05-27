@@ -42,6 +42,7 @@ const planeGeometry = new THREE.PlaneGeometry(30, 30);
 // create material and merge it with geometry into mesh!
 const planeMaterial = new THREE.MeshBasicMaterial({
   color: 0xffffff,
+  side:THREE.DoubleSide
 });
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(plane);
@@ -51,11 +52,18 @@ plane.rotation.x = -0.5 * Math.PI;
 //add grid helper
 const gridHelper = new THREE.GridHelper(30)
 scene.add(gridHelper)
-
-
-//
-
 //then we add it to the scene
+
+//DECLARE ANOTHER SHAPE
+const sphereGeometry = new THREE.SphereGeometry(4,10,10);
+
+const sphereMaterial = new THREE.MeshBasicMaterial({
+  color: 0x0000ff,
+  wireframe:true
+});
+const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+scene.add(sphere);
+
 //declare function value of rotation update get increased 60 times per second
 // every second we are going to ratate the cube by 0.01 radians and x and y axis
 function animate(time) {
