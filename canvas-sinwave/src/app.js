@@ -49,7 +49,7 @@ backgroundFolder.close();
 
 //add animated text 
 const text = {
-  message: "Amin - Canvas",
+  message: "",
   x: canvas.width / 2,
   y: canvas.height / 2,
   size: 48,
