@@ -33,9 +33,9 @@ scene.add(box);
 
 //declare function value of rotation update get increased 60 times per second
 // every second we are going to ratate the cube by 0.01 radians and x and y axis
-function animate (){
-    box.rotation.x+=0.01;
-    box.rotation.y+=0.01;
+function animate (time){
+    box.rotation.x=time/1000;
+    box.rotation.y=time/1000;
     renderer.render(scene, camera);
 }
 
