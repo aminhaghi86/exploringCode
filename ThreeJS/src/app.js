@@ -21,4 +21,22 @@ scene.add(axesHelper);
 
 // move the camera position to see ..
 camera.position.set(0,2,5)
+
+//add box in project
+
+const boxGeometry = new THREE.BoxGeometry();
+const boxMaterial = new THREE.MeshBasicMaterial({
+    color:0x00FF00
+})
+const box = new THREE.Mesh(boxGeometry,boxMaterial);
+scene.add(box);
+box.rotation.x=5
+box.rotation.z=5
+
+
+
+
+
+
+//
 renderer.render(scene, camera);
