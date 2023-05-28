@@ -1,0 +1,18 @@
+{
+	"scripts": {
+		"start": "webpack serve",
+		"build": "webpack --mode production"
+	},
+	"devDependencies": {
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.5.1",
+		"webpack": "^5.83.1",
+		"webpack-cli": "^5.1.1",
+		"webpack-dev-server": "^4.15.0"
+	},
+	"dependencies": {
+		"babel-loader": "^9.1.2",
+		"dat.gui": "^0.7.9",
+		"three": "^0.152.2"
+	}
+}
