@@ -2,6 +2,9 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 import * as dat from "dat.gui";
+
+import bgr from "./img/bgr.jpg";
+import stars from "./img/stars.jpg";
 const renderer = new THREE.WebGLRenderer();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -77,11 +80,29 @@ scene.add(ambientLight);
 // after that we need to add directional light
 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
 scene.add(directionalLight);
-directionalLight.position.set(-30,50,0)
+directionalLight.position.set(-30, 50, 0);
 // add helper to light
-const dLightHelper = new THREE.DirectionalLightHelper(directionalLight,5);
+const dLightHelper = new THREE.DirectionalLightHelper(directionalLight, 5);
 scene.add(dLightHelper);
 // dat gui
+
+//BACKGROUND
+// renderer.setClearColor(0xFFEA00);
+const textureLoadoder = new THREE.TextureLoader();
+scene.background = textureLoadoder.load(bgr)
+//  top -this is 2d image ,so we can use another method
+// const cubeTextureLoader = new THREE.CubeTextureLoader();
+// scene.background = cubeTextureLoader.load([
+//   stars,
+//   stars,
+//   stars,
+//   stars,
+//   stars,
+//   stars,
+// ]);
+
+// TO HAVE IMAGE AS A BACKGROUND INSTEAD OF COLOR WE CAN USE
+
 const gui = new dat.GUI();
 
 const options = {
